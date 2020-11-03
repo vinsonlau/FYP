@@ -1,0 +1,44 @@
+{
+  "aloevera": {
+    "av01": {
+      "condition": "baby",
+      "datetime": "23/10/2020 08:00:00",
+      "height": 20,
+      "width": 30,
+      "histories": {
+        "h01": {
+          "condition": "baby",
+          "datetime": "21/10/2020 08:00:00",
+          "height": 20,
+          "width": 20
+        },
+        "h02": {
+          "condition": "baby",
+          "datetime": "22/10/2020 08:00:00",
+          "height": 20,
+          "width": 20
+        }
+      }
+    },
+    "av02": {
+      "condition": "baby",
+      "datetime": "23/10/2020 08:00:00",
+      "height": 99,
+      "width": 99,
+      "histories": {
+        "h01": {
+          "condition": "baby",
+          "datetime": "21/10/2020 08:00:00",
+          "height": 99,
+          "width": 99
+        },
+        "h02": {
+          "condition": "baby",
+          "datetime": "22/10/2020 08:00:00",
+          "height": 99,
+          "width": 99
+        }
+      }
+    }
+  }
+}

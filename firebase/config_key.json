@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "fyp-aloe-vera",
+  "private_key_id": "f3d2669b8dda619569c9071df5eff3ad4ff012d7",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDBu/iqfZyPyy5g\npbU0pv1N5v9TjmszaiwRkhL+KJcyzqCKW4Lhqp82SpYzBxXy2yAvNGv/4lEA4Ohh\n5HBA1OheZZsPuGCmC8EG7HxeRIUMojbWTmAx45c7jPbuKoLiamCnuxwbSH/M2IHX\njNRrxEycinFq6RKTh2COmGUh3vKj7mt+bOhh7RGm/7mxbqpghazh2zd1umJiyGCN\nWPDaE/El9sU4Bp4/HoweJoXkRRpbiuO7WmKuJL+lJJk/YLqnrKQepLXDIwJ4UW9+\naWCktubHyPgiPn/8nJZsjn/efmNuPS4U1KeAe268VT5+32w1OaDAzsiH6SRy8Ess\nlGbwN8XxAgMBAAECggEAC+R1DEovrSgEzcv+RqAlln2imMd6TyqqT93OqqllNqo2\ncqfRbfbiVRvZAoLh1wmafStTod6LqGkl+rRiK6imJv1HunxP+oFoNPuZWtQL8s2W\nXitrfkSBSReLJO2ZITr0efdjb01RAwsbVVcAxyjCpy1cbvqluEasJ7S1KJIeBPAH\nWTsO2j5vV7PnUrPfn8Wx6mv5Prsxf+J5N0eNqd6hxdnVpLPYJQW7lArqIXosz9N+\nNz62MnQj/L50/nuGgVHc88NLwfGWDv+MIgcHJ5K0VTdG0okC/wqKt8sr1qoD0T/s\nKxEvd0uCpz11t2KqmaJGknQ6vjTL5rF3GUTnbV47wQKBgQDy9j/akMtd4GSum4gy\nyQsOUFiDsdn/M8p7w8591aCMpQ9CHScf2r84toemGPF1i+ujAPGy646Z5WON2xct\nQJqb9RN3zRyYnefhWnxBrDjBfl3OJBgtJl1vIfM/OEA2MXC5RmzTKPSRxSU58jpW\nZeyti66pCiJMYWQJZdrPA6J4uQKBgQDMIXHWTwuVeipYfVtXmzaM/3oySdyulcM3\ndrQyZt+4eEZsOeU7AxVoi6t2dHJcVOqHgYZP2l07AprxwEToaMPfNLACAKFMewzE\ns6pbcs51N18SNKGMjLcOMsAvCIDVqP5BU7JPolytUcubHhaLtGQp0qHsjmofTr2W\nLAfBZXIq+QKBgHQxTAxM3tVAcSYH/7S57O2lgw9ISQcBT76sv93yAlwAvDFUG9fi\nFz0aHflTSHZ8ue40j2KPwJzc1SWMN6NOmCIprGvIzfo22iQtz+rgYCw5MMda/6zo\nAhsZ02jSj/La5hvVEEpT9dKYw9rYewnCqNO+T4NL82cv1FWiPmhuRo8RAoGAdJAY\ngAbtF3MGITeb5B+2e7ca4QJ6aJsOOWqoJSvHToAnvn8k3Zi6LdOrml2OPBklPzGA\nL7MCj8LCFY/0CT5hsuBULSCM+q49MUli2wtox1hSCoRRR3/Gu+3Q/kp9vwPcBBO1\n+3E8OKA/gpkgyK++jn8/hWQhRzVgXxNPbmjuU4kCgYBscaE2/THmWrTuXltZvkU3\nxPfWKojVU38psZoV3LYOoaIRYMX8IOENSbBfUOG+3bAEmH0bB4mQ7Zl3WLNwliPS\njZ9ezHV17GDpbxWI7fHM0Hq4HdjG5+l5b8TU1i3A07eSV6qJL9h257gEyQgl9Urb\nZmIX8Tatr7dclQ+qe+id+g==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-tedsg@fyp-aloe-vera.iam.gserviceaccount.com",
+  "client_id": "110711872893873103623",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-tedsg%40fyp-aloe-vera.iam.gserviceaccount.com"
+}
