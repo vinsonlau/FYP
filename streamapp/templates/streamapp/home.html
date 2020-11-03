@@ -18,8 +18,9 @@
   <div class="container" style="margin-top: 30px">
     <div class="row">
       <div class="col-sm-8">
-      <h1>Video Live Stream</h1>
-  <img class="img-fluid" src="{% url 'video_feed' %}">
+        <h1>Video Live Stream</h1>
+        <img class="img-fluid" src="{% url 'video_feed' %}">
+
       </div>
       <div class="col-sm-4">
         <h3>System Result</h3>
@@ -31,33 +32,78 @@
           </thead>
           <tbody>
             <tr>
-            {% load realtime_firebase %}
-            {% get_aloe_vera "av01" as aloevera %}
-            {% for x in aloevera %}
-                {% if x == "condition" %}
-                    <td>{{aloevera.condition}}</td>
-                {% endif %}
-            {% endfor %}
+              {% load realtime_firebase %}
+              {% get_aloe_vera "av01" as aloevera %}
+              {% for x in aloevera %}
+              {% if x == "condition" %}
+              <td>{{aloevera.condition|capfirst}}</td>
+              {% endif %}
+              {% endfor %}
 
-            {% get_aloe_vera "av02" as aloevera %}
-            {% for x in aloevera %}
-                {% if x == "condition" %}
-                    <td>{{aloevera.condition}}</td>
-                {% endif %}
-            {% endfor %}
+              {% get_aloe_vera "av02" as aloevera %}
+              {% for x in aloevera %}
+              {% if x == "condition" %}
+              <td>{{aloevera.condition|capfirst}}</td>
+              {% endif %}
+              {% endfor %}
             </tr>
           </tbody>
         </table>
-        <h2>Detail Report</h2>
+        <h2>Detailed Report</h2>
         <table class="table table-dark table-striped">
           <thead>
+            <th>Attributes</th>
             <th>Plant 01</th>
             <th>Plant 02</th>
           </thead>
           <tbody>
             <tr>
-              <td>Healthy</td>
-              <td>Mature</td>
+              <td>Datetime</td>
+              {% get_aloe_vera "av01" as aloevera %}
+              {% for x in aloevera %}
+              {% if x == "datetime" %}
+              <td>{{aloevera.datetime|capfirst}}</td>
+              {% endif %}
+              {% endfor %}
+
+              {% get_aloe_vera "av02" as aloevera %}
+              {% for x in aloevera %}
+              {% if x == "datetime" %}
+              <td>{{aloevera.datetime|capfirst}}</td>
+              {% endif %}
+              {% endfor %}
+            </tr>
+            <tr>
+              <td>Width</td>
+              {% get_aloe_vera "av01" as aloevera %}
+              {% for x in aloevera %}
+              {% if x == "width" %}
+              <td>{{aloevera.width|capfirst}} cm</td>
+              {% endif %}
+              {% endfor %}
+
+              {% get_aloe_vera "av02" as aloevera %}
+              {% for x in aloevera %}
+              {% if x == "width" %}
+              <td>{{aloevera.width|capfirst}} cm</td>
+              {% endif %}
+              {% endfor %}
+            </tr>
+            <tr>
+              <td>Height</td>
+              {% get_aloe_vera "av01" as aloevera %}
+              {% for x in aloevera %}
+              {% if x == "height" %}
+              <td>{{aloevera.height|capfirst}} cm</td>
+              {% endif %}
+              {% endfor %}
+
+              {% get_aloe_vera "av02" as aloevera %}
+              {% for x in aloevera %}
+              {% if x == "height" %}
+              <td>{{aloevera.height|capfirst}} cm</td>
+              {% endif %}
+              {% endfor %}
             </tr>
           </tbody>
         </table>
@@ -79,13 +125,66 @@
             <table class="table table-dark table-striped" style="margin-top: 10px;">
               <thead>
                 <th>Plant 01</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Datetime</td>
+                  <td>Condition</td>
+                  <td>Width</td>
+                  <td>Height</td>
+                </tr>
+
+                {% get_history_count "av01" as count %}
+                {% with ''|center:count as range %}
+                {% get_aloe_vera "av01" as aloevera %}
+                {% for x in range %}
+
+                {% to_str forloop.counter as num %}
+                {% with name="h0"|add:num %}
+                {% get_aloe_vera_history "av01" name as avHistory %}
+                <tr>
+                  <td>{{avHistory.datetime|capfirst}}</td>
+                  <td>{{avHistory.condition|capfirst}}</td>
+                  <td>{{avHistory.width|capfirst}} cm</td>
+                  <td>{{avHistory.height|capfirst}} cm</td>
+                </tr>
+                {% endwith %}
+
+                {% endfor %}
+                {% endwith %}
+              </tbody>
+            </table>
+
+            <table class="table table-dark table-striped" style="margin-top: 10px;">
+              <thead>
                 <th>Plant 02</th>
               </thead>
               <tbody>
                 <tr>
-                  <td>Healthy</td>
-                  <td>Mature</td>
+                  <td>Datetime</td>
+                  <td>Condition</td>
+                  <td>Width</td>
+                  <td>Height</td>
                 </tr>
+
+                {% get_history_count "av02" as count %}
+                {% with ''|center:count as range %}
+                {% get_aloe_vera "av02" as aloevera %}
+                {% for x in range %}
+
+                {% to_str forloop.counter as num %}
+                {% with name="h0"|add:num %}
+                {% get_aloe_vera_history "av02" name as avHistory %}
+                <tr>
+                  <td>{{avHistory.datetime|capfirst}}</td>
+                  <td>{{avHistory.condition|capfirst}}</td>
+                  <td>{{avHistory.width|capfirst}} cm</td>
+                  <td>{{avHistory.height|capfirst}} cm</td>
+                </tr>
+                {% endwith %}
+
+                {% endfor %}
+                {% endwith %}
               </tbody>
             </table>
           </div>
