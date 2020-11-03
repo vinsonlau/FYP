@@ -26,7 +26,7 @@ def firebase_initialization():
 @register.simple_tag
 def write_database(data):
     firebase = firebase_initialization()
-    num_children = self.get_children_count()+1
+    num_children = get_children_count()+1
     av_id = "av{:02}".format(num_children)
     firebase.database().child('aloevera').child(av_id).set(data)
 
@@ -44,7 +44,7 @@ def get_aloe_vera(id):
 @register.simple_tag
 def update_aloe_vera(id, data):
     firebase = firebase_initialization()
-    av = self.get_aloe_vera(id)
+    av = get_aloe_vera(id)
     av_dic = {
         'condition': av['condition'],
         'datetime': av['datetime'],
@@ -52,7 +52,7 @@ def update_aloe_vera(id, data):
         'width': av['width']
     }
 
-    num_histories = self.get_history_count(id) + 1
+    num_histories = get_history_count(id) + 1
     hid = "h{:02}".format(num_histories)
     firebase.database().child('aloevera').child(id).update(data)
     firebase.database().child('aloevera').child(id).child('histories').child(hid).set(av_dic)
