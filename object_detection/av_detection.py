@@ -92,7 +92,6 @@ detection_classes = detection_graph.get_tensor_by_name('detection_classes:0')
 num_detections = detection_graph.get_tensor_by_name('num_detections:0')
 
 
-
 def detect(frame):
     frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     frame_expanded = np.expand_dims(frame_rgb, axis=0)
@@ -103,16 +102,16 @@ def detect(frame):
         feed_dict={image_tensor: frame_expanded})
 
     # Draw the results of the detection (aka 'visulaize the results')
-    vis_util.visualize_boxes_and_labels_on_image_array(
+    av_cond_list = vis_util.visualize_boxes_and_labels_on_image_array(
         frame,
         np.squeeze(boxes),
         np.squeeze(classes).astype(np.int32),
         np.squeeze(scores),
         category_index,
         use_normalized_coordinates=True,
-        line_thickness=8,
-        min_score_thresh=0.95)
+        line_thickness=10,
+        min_score_thresh=0.95, skip_scores=True, skip_labels=True)
 
     frameResize = cv2.resize(frame, (800, 400))
 
-    return frameResize
+    return frameResize, av_cond_list

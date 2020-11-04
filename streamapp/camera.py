@@ -1,6 +1,3 @@
-from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
-from tensorflow.keras.preprocessing.image import img_to_array
-from tensorflow.keras.models import load_model
 from imutils.video import VideoStream
 import imutils
 import cv2,os,urllib.request
@@ -18,12 +15,12 @@ class VideoCamera(object):
 		self.video.release()
 
 	def get_frame(self):
-		success, image = self.video.read()
+		_, image = self.video.read()
 		# We are using Motion JPEG, but OpenCV defaults to capture raw images,
 		# so we must encode it into JPEG in order to correctly display the
 		# video stream.
 		image = detect(image)
-		ret, jpeg = cv2.imencode('.jpg', image)
+		_, jpeg = cv2.imencode('.jpg', image)
 		return jpeg.tobytes()
 
 

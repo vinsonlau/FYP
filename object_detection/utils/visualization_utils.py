@@ -951,7 +951,7 @@ def visualize_boxes_and_labels_on_image_array(
     max_boxes_to_draw=20,
     min_score_thresh=.90,
     agnostic_mode=False,
-    line_thickness=4,
+    line_thickness=5,
     groundtruth_box_visualization_color='black',
     skip_boxes=False,
     skip_scores=False,
@@ -1066,7 +1066,7 @@ def visualize_boxes_and_labels_on_image_array(
           box_to_color_map[box] = STANDARD_COLORS[
               classes[i] % len(STANDARD_COLORS)]
 
-  av_cond = None
+  av_cond = []
   # Draw all boxes onto image.
   for box, color in box_to_color_map.items():
     ymin, xmin, ymax, xmax = box
@@ -1080,7 +1080,7 @@ def visualize_boxes_and_labels_on_image_array(
     #assume that each pixel = 0.12cm, 60cm/500pixels (to be changed)
     av_height = box_pixels * 0.12
     av_width = (xmax-xmin) * width * 0.12
-    av_cond = (av_height, av_width)
+    av_cond.append((av_height, av_width))
     label = 'Height: {:.2f} cm'.format(av_height)
     cv2.putText(image, label, (int(xmax*width+25), int(y_mp)),
             cv2.FONT_HERSHEY_SIMPLEX, 1.0, (255, 255, 255),2)

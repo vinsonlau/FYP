@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'streamapp'
-
+    'streamapp',
+    'django_celery_beat'
 ]
 
 MIDDLEWARE = [
@@ -120,3 +120,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# CRONJOBS = [
+#     # ('0 8 * * *', 'firebase.update_everyday')
+#     ('1 0 * * *', 'firebase.update_everyday')
+# ]

@@ -2,7 +2,7 @@ import os
 from celery import Celery
 
 # set the default Django settings module for the 'celery' program.
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'proj.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'video_stream.settings')
 
 app = Celery('streamapp')
 
@@ -12,10 +12,17 @@ app = Celery('streamapp')
 #   should have a `CELERY_` prefix.
 app.config_from_object('django.conf:settings', namespace='CELERY')
 
+app.conf.schedule_beat = {
+    'every-15-seconds': {
+        'task': 'streamapp.tasks.test',
+        'schedule': 15,
+    }
+}
+
 # Load task modules from all registered Django app configs.
 app.autodiscover_tasks()
 
 
 @app.task(bind=True)
 def debug_task(self):
-    print()
+    print('Request: {0!r'.format(self.request))
