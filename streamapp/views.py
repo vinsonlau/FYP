@@ -6,7 +6,13 @@ from streamapp.camera import VideoCamera
 
 
 def index(request):
-	return render(request, 'streamapp/home.html')
+	context = {}
+	if request.POST.get('Update'):
+		context = {
+			'bool': 'true'
+		}
+	return render(request, 'streamapp/home.html', context=context)
+
 
 def gen(camera):
 	while True:
